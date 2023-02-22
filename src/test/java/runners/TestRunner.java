@@ -1,0 +1,20 @@
+// This package contains the Test Runner class
+package runners;
+// Importing necessary classes from Cucumber and TestNG
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.DataProvider;
+// Annotation specifying the Cucumber options for running the tests
+@CucumberOptions(features = "src/test/resources/features",
+        glue = "steps",publish = true,
+        plugin = {"pretty", "html:target/cucumber-reports.html"},
+        monochrome = true
+)
+// The Test Runner class extends the AbstractTestNGCucumberTests class
+public class TestRunner extends AbstractTestNGCucumberTests {
+    // DataProvider annotation specifies that this method returns test data for parallel execution
+    @DataProvider(parallel = true)
+    public Object[][] scenarios(){
+        return super.scenarios();
+    }
+}
