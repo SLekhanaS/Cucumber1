@@ -1,0 +1,7 @@
+steps\StepDefinitions.class
+utils\BrowserManager.class
+pages\AmazonSearchTest.class
+runners\TestRunner.class
+utils\QaProps.class
+utils\TestDataReader.class
+steps\Hooks.class
