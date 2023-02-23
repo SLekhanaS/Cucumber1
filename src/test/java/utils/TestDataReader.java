@@ -1,5 +1,3 @@
-// This code is a Java class that reads data from an Excel file using Apache POI library.
-// Importing required libraries
 package utils;
 
 import org.apache.poi.ss.usermodel.Row;
@@ -12,14 +10,13 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class TestDataReader {
-    // Declaring required class level variables
+
     private static HashMap<String, HashMap<String,String >> data;
     private static XSSFWorkbook workbook = null;
-    // Main method of the class
     public static void main(String[] args) {
         init();
     }
-    // A private method that initializes the workbook and reads data from Excel file
+
     private static void init(){
         if(workbook==null) {
             FileInputStream fileInputStream = null;
@@ -51,7 +48,6 @@ public class TestDataReader {
         }
 
     }
-    // A public method that returns data for a given key
     public static HashMap<String, String> getData(String key){
         init();
         return data.get(key);
