@@ -1,3 +1,4 @@
+//Importing required packages
 package utils;
 
 import org.apache.poi.ss.usermodel.Row;
@@ -10,13 +11,14 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class TestDataReader {
-
+    //Declaring variables
     private static HashMap<String, HashMap<String,String >> data;
     private static XSSFWorkbook workbook = null;
     public static void main(String[] args) {
+        //Main method
         init();
     }
-
+    //Initialization method to read data from excel
     private static void init(){
         if(workbook==null) {
             FileInputStream fileInputStream = null;
@@ -31,9 +33,11 @@ public class TestDataReader {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            //Accessing the required sheet
             XSSFSheet sheet = workbook.getSheet("Sheet1");
 
             data = new HashMap<>();
+            //Reading each row and column and storing the data in hashmap
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i);
                 String key = row.getCell(0).getStringCellValue();
@@ -48,6 +52,7 @@ public class TestDataReader {
         }
 
     }
+    //Method to return data for a specific key
     public static HashMap<String, String> getData(String key){
         init();
         return data.get(key);
