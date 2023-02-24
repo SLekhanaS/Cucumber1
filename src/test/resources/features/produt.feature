@@ -26,8 +26,3 @@ Feature: search a product feature
     Examples:
       | url                      |
       | https://www.apple.com/in/|
-
-
-
-
-

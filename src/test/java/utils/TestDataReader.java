@@ -1,4 +1,6 @@
-//Importing required packages
+// This code is a Java class that reads data from an Excel file using Apache POI library.
+
+// Importing required libraries
 package utils;
 
 import org.apache.poi.ss.usermodel.Row;
@@ -11,14 +13,14 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class TestDataReader {
-    //Declaring variables
+    // Declaring required class level variables
     private static HashMap<String, HashMap<String,String >> data;
     private static XSSFWorkbook workbook = null;
+    // Main method of the class
     public static void main(String[] args) {
-        //Main method
-        init();
+        init(); // Initializing the workbook
     }
-    //Initialization method to read data from excel
+
     private static void init(){
         if(workbook==null) {
             FileInputStream fileInputStream = null;
@@ -27,17 +29,15 @@ public class TestDataReader {
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
-
+// A private method that initializes the workbook and reads data from Excel file
             try {
                 workbook = new XSSFWorkbook(fileInputStream);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            //Accessing the required sheet
             XSSFSheet sheet = workbook.getSheet("Sheet1");
 
             data = new HashMap<>();
-            //Reading each row and column and storing the data in hashmap
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i);
                 String key = row.getCell(0).getStringCellValue();
@@ -52,9 +52,9 @@ public class TestDataReader {
         }
 
     }
-    //Method to return data for a specific key
+    // A public method that returns data for a given key
     public static HashMap<String, String> getData(String key){
-        init();
-        return data.get(key);
+        init(); // Initializing the workbook
+        return data.get(key); // Returning data for given key
     }
 }
