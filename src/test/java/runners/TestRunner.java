@@ -1,7 +1,6 @@
 // This package contains the Test Runner class
 // Importing necessary classes from Cucumber and TestNG
 package runners;
-
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
