@@ -2,7 +2,6 @@
 // Importing necessary classes from Cucumber and TestNG
 package runners;
 
-
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
@@ -10,7 +9,7 @@ import org.testng.annotations.DataProvider;
 // Annotation specifying the Cucumber options for running the tests
 @CucumberOptions(features = "src/test/resources/features",
         glue = "steps",publish = true,
-        plugin = {"pretty", "html:target/cucumber-reports.html","json:target/cucumber-reports.json"},
+        plugin = {"pretty", "html:target/cucumber-reports.html","json:target/Cucumber-reports.json"},
         monochrome = true
 )
 // The Test Runner class extends the AbstractTestNGCucumberTests class

@@ -1,7 +1,7 @@
-// This code is a Java class file for testing Amazon search functionality using Selenium WebDriver.
-// It imports necessary libraries, sets up the driver, and initializes web elements using Page Factory.
 package pages;
+// It imports necessary libraries
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,49 +15,70 @@ import javax.naming.directory.SearchResult;
 import javax.swing.*;
 
 import static org.openqa.selenium.By.*;
-// Constructor to initialize the driver and Page Factory elements.
+// declare variables
+
 public class AmazonSearchTest {
-    WebDriver driver;
+    private WebDriver driver;
 
     public AmazonSearchTest(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);
 
     }
-    // Method to set up the driver before the test is run.
+
     @BeforeTest
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
-    // Web element for the search bar on Amazon.
+    //web elements for searchbar
     @FindBy(xpath = "//input[@id=\"twotabsearchtextbox\"]")
-    private WebElement SearchBar;
-    public WebElement getSearchBar() {
-        return SearchBar;
-    }
-    // Method to get the search bar element.
-    public WebElement getSearchInfo() {
-        return SearchInfo;
-    }
+    @Getter
+    WebElement SearchBar;
     @FindBy(xpath = "//span[@class=\"a-color-state a-text-bold\"]")
 
-    private WebElement SearchInfo;
-
-// Web element for the search result info on Amazon.
-
-    public WebElement getSearchInfo1() {
-        return SearchInfo1;
-    }
-    // Method to get the other search result info element.
+    WebElement SearchInfo;
+    @FindBy(xpath = "//span[@class=\"a-size-base-plus a-color-base a-text-normal\"]")
+    WebElement SearchResult;
     @FindBy(xpath = "//span[@class=\"a-color-state a-text-bold\"]")
-    private WebElement SearchInfo1;
+    WebElement SearchInfo1;
 
-// Method to get the driver instance.
+//    public AbstractButton getSearchInfo() {
+//       return SearchInfo;
+//    }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
+
+//   public WebElement getSearchBar() {
+//       return SearchBar;
+//    }
+
+    //web elements for search info
+//    public WebElement getSearchInfo() {
+//        return SearchInfo;
+//    }
+
+    //web elements for search results
+
+//   public WebElement getSearchResult() {
+//    return SearchResult;
+//   }
+
+
+//    public WebElement getSearchInfo1() {
+//        return SearchInfo1;
+//    }
+
+
+
+//    @FindBy(xpath = "//h1[@ class=\"a-size-base-plus a-text-bold\"]")
+//    private WebElement searchInfo2;
+
+//    public WebElement getSearchInfo2() {
+//        return searchInfo2;
+//    }
+
+
+//    public WebDriver getDriver() {
+//        return driver;
+//    }
 }
-
-

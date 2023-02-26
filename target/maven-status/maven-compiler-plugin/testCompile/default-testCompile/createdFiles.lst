@@ -5,3 +5,4 @@ runners\TestRunner.class
 utils\QaProps.class
 utils\TestDataReader.class
 steps\Hooks.class
+utils\WaitUtils.class
