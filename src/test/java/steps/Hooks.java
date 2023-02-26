@@ -1,6 +1,5 @@
-// // Declaring required class level variables
+// Declaring required class level variables
 package steps;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import utils.BrowserManager;

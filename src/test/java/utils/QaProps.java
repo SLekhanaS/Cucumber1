@@ -1,9 +1,6 @@
 // This is a package named "utils".
 package utils;
-
 // This is importing classes from the java.io and java.util packages.
-
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;

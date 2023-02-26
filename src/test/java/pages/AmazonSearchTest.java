@@ -1,3 +1,5 @@
+// This code is a Java class file for testing Amazon search functionality using Selenium WebDriver.
+// It imports necessary libraries, sets up the driver, and initializes web elements using Page Factory.
 package pages;
 // It imports necessary libraries
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -15,8 +17,8 @@ import javax.naming.directory.SearchResult;
 import javax.swing.*;
 
 import static org.openqa.selenium.By.*;
-// declare variables
 
+// Constructor to initialize the driver and Page Factory elements.
 public class AmazonSearchTest {
     private WebDriver driver;
 
@@ -27,21 +29,43 @@ public class AmazonSearchTest {
     }
 
     @BeforeTest
+    // Method to set up the driver before the test is run.
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
-    //web elements for searchbar
+    // Web element for the search bar on Amazon.
     @FindBy(xpath = "//input[@id=\"twotabsearchtextbox\"]")
     @Getter
+    // Method to get the search bar element
     WebElement SearchBar;
     @FindBy(xpath = "//span[@class=\"a-color-state a-text-bold\"]")
-
+// Web element for the search result info on Amazon.
     WebElement SearchInfo;
     @FindBy(xpath = "//span[@class=\"a-size-base-plus a-color-base a-text-normal\"]")
+    // Method to get the search result info element.
     WebElement SearchResult;
     @FindBy(xpath = "//span[@class=\"a-color-state a-text-bold\"]")
+    // Web element for another search result info on Amazon.
     WebElement SearchInfo1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //    public AbstractButton getSearchInfo() {
 //       return SearchInfo;

@@ -1,7 +1,6 @@
 // This code is a class that manages the browser and sets up a WebDriver for Selenium tests.
 // It imports necessary libraries and sets up a ChromeDriver.
 package utils;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
